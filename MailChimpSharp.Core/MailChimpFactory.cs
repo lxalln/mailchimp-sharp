@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MailChimpSharp.Core
+﻿namespace MailChimpSharp.Core
 {
     public class MailChimpFactory : IMailChimpFactory
     {
@@ -16,9 +14,22 @@ namespace MailChimpSharp.Core
             return Create(mailChimpConnector);
         }
 
-        private IMailChimp Create(IMailChimpConnector connector)
+        private static IMailChimp Create(IMailChimpConnector connector)
         {
-            throw new NotImplementedException();
+            return new MailChimp(
+                new Automations.Automations(connector), 
+                new Campaigns.Campaigns(connector), 
+                new Conversations.Conversations(connector), 
+                new Ecomm.Ecomm(connector), 
+                new Folders.Folders(connector), 
+                new Gallery.Gallery(connector), 
+                new Goal.Goal(connector), 
+                new Helper.Helper(connector), 
+                new Lists.Lists(connector), 
+                new Reports.Reports(connector), 
+                new Templates.Templates(connector), 
+                new Users.Users(connector), 
+                new Vip.Vip(connector));
         }
     }
 }
