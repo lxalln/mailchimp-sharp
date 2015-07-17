@@ -9,8 +9,6 @@ namespace MailChimpSharp.Core
     internal class MailChimpConnector : IMailChimpConnector
     {
         private const string InvalidApiKeyMessage = "API key is not valid. Must be a valid v2.0 Mailchimp API key";
-        private string _accessToken;
-        private string _dataCentrePrefix;
 
         public MailChimpConnector(string apiKey)
         {
@@ -19,13 +17,17 @@ namespace MailChimpSharp.Core
 
         public MailChimpConnector(string accessToken, string dataCentrePrefix)
         {
-            _accessToken = accessToken;
-            _dataCentrePrefix = dataCentrePrefix;
+            AccessToken = accessToken;
+            DataCentrePrefix = dataCentrePrefix;
         }
+
+        internal string AccessToken { get; private set; }
+
+        internal string DataCentrePrefix { get; private set; }
 
         public TResult Execute<TResult>(string action, object args) where TResult : new()
         {
-            if (string.IsNullOrWhiteSpace(_accessToken) || string.IsNullOrWhiteSpace(_dataCentrePrefix))
+            if (string.IsNullOrWhiteSpace(AccessToken) || string.IsNullOrWhiteSpace(DataCentrePrefix))
             {
                 throw new ArgumentException(InvalidApiKeyMessage);
             }
@@ -45,7 +47,7 @@ namespace MailChimpSharp.Core
 
         public async Task<TResult> ExecuteAsync<TResult>(string action, object args) where TResult : new()
         {
-            if (string.IsNullOrWhiteSpace(_accessToken) || string.IsNullOrWhiteSpace(_dataCentrePrefix))
+            if (string.IsNullOrWhiteSpace(AccessToken) || string.IsNullOrWhiteSpace(DataCentrePrefix))
             {
                 throw new ArgumentException(InvalidApiKeyMessage);
             }
@@ -124,19 +126,19 @@ namespace MailChimpSharp.Core
 
         private RestClient CreateClient()
         {
-            return new RestClient(string.Format("https://{0}.api.mailchimp.com/2.0/", _dataCentrePrefix));
+            return new RestClient(string.Format("https://{0}.api.mailchimp.com/2.0/", DataCentrePrefix));
         }
 
         private void ParseApiKey(string apiKey)
         {
-            var strings = apiKey.Split('-');
+            var strings = apiKey.Split(new[] { "-" }, StringSplitOptions.RemoveEmptyEntries);
             if (strings.Length != 2)
             {
                 throw new ArgumentException(InvalidApiKeyMessage);
             }
 
-            _accessToken = strings[0];
-            _dataCentrePrefix = strings[1];
+            AccessToken = strings[0];
+            DataCentrePrefix = strings[1];
         }
     }
 }

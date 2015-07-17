@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MailChimpSharp.Core")]
+[assembly: AssemblyTitle("MailChimpSharp.Facts")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MailChimpSharp.Core")]
+[assembly: AssemblyProduct("MailChimpSharp.Facts")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("50b202fe-40f1-481b-a5f0-2ed283acd316")]
+[assembly: Guid("894fc65d-c630-4da0-a4a3-07c5dd0773eb")]
 
 // Version information for an assembly consists of the following four values:
 //
