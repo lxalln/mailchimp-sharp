@@ -2,7 +2,7 @@
 {
     public interface IMailChimpFactory
     {
-        IMailChimp Create(string apikey);
+        IMailChimp Create(string apiKey);
 
         IMailChimp Create(string accessToken, string dataCentrePrefix);
     }
