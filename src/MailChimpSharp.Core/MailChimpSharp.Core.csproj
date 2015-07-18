@@ -47,8 +47,11 @@
     <Compile Include="Sections\Automations\IAutomations.cs" />
     <Compile Include="Sections\Campaigns\CampaignContentOptions.cs" />
     <Compile Include="Sections\Campaigns\CampaignContentOptionsBuilder.cs" />
+    <Compile Include="Sections\Campaigns\CampaignCreateOptions.cs" />
+    <Compile Include="Sections\Campaigns\CampaignCreateOptionsBuilder.cs" />
     <Compile Include="Sections\Campaigns\Campaigns.cs" />
     <Compile Include="Sections\Campaigns\ICampaigns.cs" />
+    <Compile Include="Sections\Campaigns\MailChimpCampaign.cs" />
     <Compile Include="Sections\Campaigns\MailChimpCampaignContent.cs" />
     <Compile Include="Sections\Conversations\Conversations.cs" />
     <Compile Include="Sections\Conversations\IConversations.cs" />

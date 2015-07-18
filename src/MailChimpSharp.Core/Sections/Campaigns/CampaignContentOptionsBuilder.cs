@@ -4,17 +4,16 @@ namespace MailChimpSharp.Core.Sections.Campaigns
 {
     public class CampaignContentOptionsBuilder
     {
-        private CampaignContentOptions _campaignContentOptions;
+        private readonly CampaignContentOptions _options;
+
+        public CampaignContentOptionsBuilder()
+        {
+            _options = new CampaignContentOptions();
+        }
 
         public static implicit operator CampaignContentOptions(CampaignContentOptionsBuilder builder)
         {
-            return builder._campaignContentOptions;
-        }
-
-        public CampaignContentOptions Build()
-        {
-            _campaignContentOptions = new CampaignContentOptions();
-            return _campaignContentOptions;
+            return builder._options;
         }
 
         public CampaignContentOptionsBuilder WithEmailAddress(string emailAddress)
@@ -24,7 +23,7 @@ namespace MailChimpSharp.Core.Sections.Campaigns
                 throw new ArgumentException("Email address is null or empty");
             }
 
-            _campaignContentOptions.Email = new MailChimpEmail
+            _options.Email = new MailChimpEmail
             {
                 EmailAddress = emailAddress
             };
@@ -39,7 +38,7 @@ namespace MailChimpSharp.Core.Sections.Campaigns
                 throw new ArgumentException("Email address is null or empty");
             }
 
-            _campaignContentOptions.Email = new MailChimpEmail
+            _options.Email = new MailChimpEmail
             {
                 EmailUniqueId = emailUniqueId
             };
@@ -54,7 +53,7 @@ namespace MailChimpSharp.Core.Sections.Campaigns
                 throw new ArgumentException("Email address is null or empty");
             }
 
-            _campaignContentOptions.Email = new MailChimpEmail
+            _options.Email = new MailChimpEmail
             {
                 ListEmailId = listEmailId
             };
@@ -64,7 +63,7 @@ namespace MailChimpSharp.Core.Sections.Campaigns
 
         public CampaignContentOptionsBuilder WithView(CampaignContentOptions.ContentView view)
         {
-            _campaignContentOptions.View = view;
+            _options.View = view;
             return this;
         }
     }
