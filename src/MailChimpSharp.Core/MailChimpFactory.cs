@@ -1,4 +1,18 @@
-﻿namespace MailChimpSharp.Core
+﻿using MailChimpSharp.Core.Sections.Automations;
+using MailChimpSharp.Core.Sections.Campaigns;
+using MailChimpSharp.Core.Sections.Conversations;
+using MailChimpSharp.Core.Sections.Ecomm;
+using MailChimpSharp.Core.Sections.Folders;
+using MailChimpSharp.Core.Sections.Gallery;
+using MailChimpSharp.Core.Sections.Goal;
+using MailChimpSharp.Core.Sections.Helper;
+using MailChimpSharp.Core.Sections.Lists;
+using MailChimpSharp.Core.Sections.Reports;
+using MailChimpSharp.Core.Sections.Templates;
+using MailChimpSharp.Core.Sections.Users;
+using MailChimpSharp.Core.Sections.Vip;
+
+namespace MailChimpSharp.Core
 {
     public class MailChimpFactory : IMailChimpFactory
     {
@@ -17,19 +31,19 @@
         private static IMailChimp Create(IMailChimpConnector connector)
         {
             return new MailChimp(
-                new Automations.Automations(connector), 
-                new Campaigns.Campaigns(connector), 
-                new Conversations.Conversations(connector), 
-                new Ecomm.Ecomm(connector), 
-                new Folders.Folders(connector), 
-                new Gallery.Gallery(connector), 
-                new Goal.Goal(connector), 
-                new Helper.Helper(connector), 
-                new Lists.Lists(connector), 
-                new Reports.Reports(connector), 
-                new Templates.Templates(connector), 
-                new Users.Users(connector), 
-                new Vip.Vip(connector));
+                new Automations(connector), 
+                new Campaigns(connector), 
+                new Conversations(connector), 
+                new Ecomm(connector), 
+                new Folders(connector), 
+                new Gallery(connector), 
+                new Goal(connector), 
+                new Helper(connector), 
+                new Lists(connector), 
+                new Reports(connector), 
+                new Templates(connector), 
+                new Users(connector), 
+                new Vip(connector));
         }
     }
 }

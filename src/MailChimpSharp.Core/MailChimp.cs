@@ -1,16 +1,16 @@
-using MailChimpSharp.Core.Automations;
-using MailChimpSharp.Core.Campaigns;
-using MailChimpSharp.Core.Conversations;
-using MailChimpSharp.Core.Ecomm;
-using MailChimpSharp.Core.Folders;
-using MailChimpSharp.Core.Gallery;
-using MailChimpSharp.Core.Goal;
-using MailChimpSharp.Core.Helper;
-using MailChimpSharp.Core.Lists;
-using MailChimpSharp.Core.Reports;
-using MailChimpSharp.Core.Templates;
-using MailChimpSharp.Core.Users;
-using MailChimpSharp.Core.Vip;
+using MailChimpSharp.Core.Sections.Automations;
+using MailChimpSharp.Core.Sections.Campaigns;
+using MailChimpSharp.Core.Sections.Conversations;
+using MailChimpSharp.Core.Sections.Ecomm;
+using MailChimpSharp.Core.Sections.Folders;
+using MailChimpSharp.Core.Sections.Gallery;
+using MailChimpSharp.Core.Sections.Goal;
+using MailChimpSharp.Core.Sections.Helper;
+using MailChimpSharp.Core.Sections.Lists;
+using MailChimpSharp.Core.Sections.Reports;
+using MailChimpSharp.Core.Sections.Templates;
+using MailChimpSharp.Core.Sections.Users;
+using MailChimpSharp.Core.Sections.Vip;
 
 namespace MailChimpSharp.Core
 {

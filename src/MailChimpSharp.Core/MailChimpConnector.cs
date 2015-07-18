@@ -46,7 +46,7 @@ namespace MailChimpSharp.Core
             return response.Data;
         }
 
-        public async Task<TResult> ExecuteAsync<TResult>(string action, object args, CancellationToken cancellationToken) where TResult : new()
+        public async Task<TResult> ExecuteAsync<TResult>(string action, object args, CancellationToken cancellationToken = default(CancellationToken)) where TResult : new()
         {
             if (string.IsNullOrWhiteSpace(AccessToken) || string.IsNullOrWhiteSpace(DataCentrePrefix))
             {
