@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
 using RestSharp;
 
@@ -45,7 +46,7 @@ namespace MailChimpSharp.Core
             return response.Data;
         }
 
-        public async Task<TResult> ExecuteAsync<TResult>(string action, object args) where TResult : new()
+        public async Task<TResult> ExecuteAsync<TResult>(string action, object args, CancellationToken cancellationToken) where TResult : new()
         {
             if (string.IsNullOrWhiteSpace(AccessToken) || string.IsNullOrWhiteSpace(DataCentrePrefix))
             {
@@ -56,7 +57,7 @@ namespace MailChimpSharp.Core
             var request = CreateRequest(action, args);
 
             // todo: add retry logic (Polly)
-            var response = await client.ExecuteTaskAsync<TResult>(request);
+            var response = await client.ExecuteTaskAsync<TResult>(request, cancellationToken);
 
             if (response.ErrorException != null)
             {
