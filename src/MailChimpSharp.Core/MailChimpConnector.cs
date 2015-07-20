@@ -71,7 +71,7 @@ namespace MailChimpSharp.Core
         {
             var request = new RestRequest(action, Method.POST)
                 .AddJsonBody(args);
-
+            
             request.RequestFormat = DataFormat.Json;
 
             // todo: Get this from configuration

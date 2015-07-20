@@ -12,6 +12,6 @@ namespace MailChimpSharp.Core.Sections.Campaigns
             CampaignContentOptions options = null,
             CancellationToken cancellationToken = default(CancellationToken));
 
-        MailChimpCampaign Create(MailChimpCampaign.CampaignType type, CampaignCreateOptions options);
+        MailChimpCampaign Create(MailChimpCampaign.CampaignType type, CampaignCreateOptions createOptions, CampaignCreateContentOptions contentOptions);
     }
 }

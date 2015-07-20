@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MailChimpSharp.Core</RootNamespace>
     <AssemblyName>MailChimpSharp.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,6 +48,7 @@
     <Compile Include="Sections\Automations\IAutomations.cs" />
     <Compile Include="Sections\Campaigns\CampaignContentOptions.cs" />
     <Compile Include="Sections\Campaigns\CampaignContentOptionsBuilder.cs" />
+    <Compile Include="Sections\Campaigns\CampaignCreateContentOptions.cs" />
     <Compile Include="Sections\Campaigns\CampaignCreateOptions.cs" />
     <Compile Include="Sections\Campaigns\CampaignCreateOptionsBuilder.cs" />
     <Compile Include="Sections\Campaigns\Campaigns.cs" />
