@@ -49,6 +49,7 @@
     <Compile Include="Sections\Campaigns\CampaignContentOptions.cs" />
     <Compile Include="Sections\Campaigns\CampaignContentOptionsBuilder.cs" />
     <Compile Include="Sections\Campaigns\CampaignCreateContentOptions.cs" />
+    <Compile Include="Sections\Campaigns\CampaignCreateContentOptionsBuilder.cs" />
     <Compile Include="Sections\Campaigns\CampaignCreateOptions.cs" />
     <Compile Include="Sections\Campaigns\CampaignCreateOptionsBuilder.cs" />
     <Compile Include="Sections\Campaigns\Campaigns.cs" />

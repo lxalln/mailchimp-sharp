@@ -4,7 +4,7 @@ namespace MailChimpSharp.Core.Sections.Campaigns
 {
     public class CampaignCreateContentOptions
     {
-        public CampaignCreateContentOptions()
+        internal CampaignCreateContentOptions()
         {
             Sections = new Dictionary<string, string>();
         }
@@ -30,32 +30,5 @@ namespace MailChimpSharp.Core.Sections.Campaigns
         public string Text { get; internal set; }
 
         public string Url { get; internal set; }
-    }
-
-    public class CampaignCreateContentOptionsBuilder
-    {
-        private readonly CampaignCreateContentOptions _options;
-
-        public CampaignCreateContentOptionsBuilder()
-        {
-            _options = new CampaignCreateContentOptions();
-        }
-
-        protected CampaignCreateContentOptions Options
-        {
-            get { return _options; }
-        }
-
-        public CampaignCreateContentOptionsBuilder WithHtml(string html)
-        {
-            Options.Html = html;
-            return this;
-        }
-
-        public CampaignCreateContentOptionsBuilder UsingSection(string key, string value)
-        {
-            Options.Sections.Add(key, value);
-            return this;
-        }        
     }
 }
